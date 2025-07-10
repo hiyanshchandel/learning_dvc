@@ -1,4 +1,26 @@
 1-> create git repo and clone it in local
 2-> create a code file code.py and code to it. (it will save a csv file to a new "data" folder)
 3-> do a git add-commit-push before initializing dvc
-4->
+4-> pip install dvc (if not already there)
+5-> now we do "dvc init" (creates .dvcignore, .dvc)
+6-> now do mkdir S3 (this is where the data files will be saved, altho prctically we use real AWS s3 service and use that path, but this is just to learn dvc rn)
+7-> Now we do "dvc remote add -d myremote S3" (instead of S3 we'd enter the S3 url if we were using s3 service)
+8-> next "dvc add data/" (telling dvc that it has to track this entire folder we can also make it track certain files by data/filename)
+    (3.11.11) (base) hiyansh@Hiyanshs-MacBook-Pro-6 learning_dvc % dvc add data/
+Adding...                                                                                                                                
+ERROR:  output 'data' is already tracked by SCM (e.g. Git).                                                                              
+    You can remove it from Git, then add to DVC.
+        To stop tracking from Git:
+            9-> git rm -r --cached 'data' # command for git to stop tracking /data
+            10-> git commit -m "stop tracking data" # commmiting that change
+            ->->-> (this is because git is already tracking that folder) <-<-<-
+11-> now perform "dvc add data/" again and this time you'll get no ERROR
+                        To track the changes with git, run:
+
+                            git add .gitignore data.dvc            (this data.dvc contains the id, its named data.dvc as its tracking the folder named "data" also you'll find the data cached in .dvc folder)
+
+                    To enable auto staging, run:
+
+                            dvc config core.autostage true
+
+12-> git add. or git add .gitignore data.dvc to track these changes
