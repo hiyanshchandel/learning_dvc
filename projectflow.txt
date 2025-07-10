@@ -34,3 +34,4 @@ ERROR:  output 'data' is already tracked by SCM (e.g. Git).
 19-> do git add/commit/push to save the 3rd version of the code
 20-> git log --oneline
 21-> git checkout <hash>
+22-> dvc pull (pulls the data corresponding to the current git version)
