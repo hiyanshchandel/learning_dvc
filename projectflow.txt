@@ -32,3 +32,5 @@ ERROR:  output 'data' is already tracked by SCM (e.g. Git).
 17 -> now make chanegs in the mycode.py to add a new row again to create 3rd version
 18-> now again "dvc commit" and "dvc push" this changes the data.dvc file as well as store current version of data in S3
 19-> do git add/commit/push to save the 3rd version of the code
+20-> git log --oneline
+21-> git checkout <hash>
