@@ -26,3 +26,6 @@ ERROR:  output 'data' is already tracked by SCM (e.g. Git).
 12->git add .gitignore data.dvc to track these changes
 13-> now do dvc commit and dvc push
 14-> now do git add/commit/push to mark this stage as the first version of the data
+15-> now we make changes to the mycode.py file to append a new row in data , check changes via "dvc status"
+16-> now we do "dvc commit" and "dvc push" # this changes the data.dvc file and the id is changed this data.dvc file is different throught every git version, thus when you rollback to a certain git version you find a data.dvc file contaning the data version id , also all various data verisons are saved in S3 which is usually on some cloud (S3 bucket) so obviously its not traced
+16-> now we git add/commit/push
